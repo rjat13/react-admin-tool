@@ -1,0 +1,64 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "John Doe",
+            "email": "johndoe@example.com",
+            "role": "admin"
+          },
+          {
+            "id": 2,
+            "name": "Jane Doe",
+            "email": "janedoe@example.com",
+            "role": "user"
+          },
+          {
+            "id": 3,
+            "name": "Peter Jones",
+            "email": "peterjones@example.com",
+            "role": "admin"
+          },
+          {
+            "id": 4,
+            "name": "Mary Smith",
+            "email": "marysmith@example.com",
+            "role": "user"
+          },
+          {
+            "id": 5,
+            "name": "David Williams",
+            "email": "davidwilliams@example.com",
+            "role": "admin"
+          },
+          {
+            "id": 6,
+            "name": "Sarah Brown",
+            "email": "sarahbrown@example.com",
+            "role": "user"
+          },
+          {
+            "id": 7,
+            "name": "Michael Miller",
+            "email": "michaelmiller@example.com",
+            "role": "admin"
+          },
+          {
+            "id": 8,
+            "name": "Jennifer Davis",
+            "email": "jenniferdavis@example.com",
+            "role": "user"
+          },
+          {
+            "id": 9,
+            "name": "Mark Taylor",
+            "email": "marktaylor@example.com",
+            "role": "admin"
+          },
+          {
+            "id": 10,
+            "name": "Linda Anderson",
+            "email": "lindaanderson@example.com",
+            "role": "user"
+          }
+    ]
+}
