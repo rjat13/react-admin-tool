@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { toast } from "react-toastify";
 import { LOGIN_SUCCESS } from "../../Constant.js";
 import { decryptObject, encryptObject } from "../../utils/authEncrypt";
+import { redirect } from "react-router-dom";
 
 export const AuthContext = createContext({});
 const AuthProvider = ({ children }) => {
@@ -21,7 +22,15 @@ const AuthProvider = ({ children }) => {
     localStorage.removeItem("_authuser");
   };
 
-  const value = { userSignOut, AuthUser, updateAuthUser };
+  const isLoggedInUser = () => {
+    console.log("user logged in ")
+    if(!Object.keys(AuthUser).length > 0){
+      return redirect('/admin');
+    }
+    return null;
+  };
+
+  const value = { userSignOut, AuthUser, updateAuthUser, isLoggedInUser };
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 

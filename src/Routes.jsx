@@ -6,8 +6,13 @@ import Dashboard from "./pages/admin/dashboard";
 import AdminLayout from "./layouts/AdminLayout";
 import Users from "./pages/admin/users";
 import NotFound from "./pages/404";
+import { AuthContext } from "./store/provider/AuthProvider";
+import {useAuth} from './hooks/useAuth'
+
 
 const Routes = () => {
+	const { isLoggedInUser } = useAuth(AuthContext);
+	console.log("abc", isLoggedInUser)
 	const router = createBrowserRouter([
 		{
 			path: '/',
@@ -24,6 +29,7 @@ const Routes = () => {
 				},{
 					path: '*',
 					element: <AdminLayout />,
+					// loader: () => isLoggedInUser(),
 					children: [
 						{
 							path: 'dashboard',

@@ -1,0 +1,106 @@
+a {
+    text-decoration: none;
+}
+h1 {
+    font-size: 2rem;
+}
+.sidebar-banner {
+    background-image: url(../assets/images/signup-bg.png);
+    height: 500px;
+    background-repeat: no-repeat;
+    width: 100% !important;
+    background-size: cover;
+}
+.btn:hover {
+    color: #fff;
+}
+
+.table > :not(caption) > * > * {
+    padding: 0.9rem 0.5rem;
+}
+.No-data-msg {
+    text-align: center;
+    font-size: 18px;
+    color: #000;
+    font-weight: 600;
+}
+.form-control-sm  {
+    padding: 0.85rem 0.9rem;
+}
+html:not([dir=rtl]) .form-select {
+    padding: 0.85rem 0.9rem;
+}
+.icon:not(.icon-c-s):not(.icon-custom-size).icon-lg {
+    width: 1.8rem;
+    height: 1.8rem;
+    font-size: 2.25rem;
+}
+.card-header {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.custom-accordion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 20px;
+    width: 100%;
+    &__item {
+        font-size: 1rem;
+        max-width: 70%;
+    }
+}
+.accordion-button {
+    &:focus, &:active {
+        box-shadow: none;
+        outline: 0;
+        border: none;
+    }
+}
+.footer {
+    width: 100%;
+    text-align: center;
+    background-color: var(--cui-body-color);
+    color: #ffff;
+    display: flex;
+    justify-content: center;
+}
+.otp-input {
+    input {
+        width: 55px;
+        height: 55px !important;
+        text-align: center;
+        border: 1px solid #0061ea;
+        border-radius: 8px;
+        font-size: 16px;
+        color: #000;
+        font-weight: 400;
+        --webkit-appearance: none;
+        appearance: none;
+        --moz-appearance: none;
+        margin-right: 15px;
+    }
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.nav-tabs {
+    .nav-link  {
+        font-weight: 600;
+        cursor: pointer;
+    }
+}
+.pagination {
+    .page-link {
+        cursor: pointer;
+    }
+}
