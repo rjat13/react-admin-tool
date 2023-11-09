@@ -2,14 +2,15 @@ export const LOGIN_SUCCESS = 'Logged in successfully'
 export const PASSWORD_RESET_SUCCESS = 'Your new password has been updated.';
 export const OTP_GENERATED_SUCCESS = 'OTP has been sent to your email.';
 export const OTP_VERIFY_SUCCESS = 'OTP verification done.';
-export const BREADCRUMBARRAY = [{
-  'home': {path: '', name:'Home' },
+export const BREADCRUMBARRAY = {
+  'dashboard': {path: 'dashaboard', name:'Home' },
   'users': {path: 'users', name:'Users Management' },
   'personality-quiz': {path: 'personality-quiz', name:'Personality Quiz' },
   'travel-quiz': {path: 'travel-quiz', name:'Travel Quiz' },
   'generated-plans': {path: 'generated-plans', name:'No. of Plans Generated' },
   'details': {path: 'details', name:'Plan Details' },
-}]
+  'add-user': {path: 'add-user', name: 'Add User Details'}
+}
 
 export const USER_TOKEN = "refresh-token";
 export const USER_ID = "user-id";

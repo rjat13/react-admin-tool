@@ -8,6 +8,7 @@ import Users from "./pages/admin/users";
 import NotFound from "./pages/404";
 import { AuthContext } from "./store/provider/AuthProvider";
 import {useAuth} from './hooks/useAuth'
+import AddUser from "./pages/admin/users/AddUser";
 
 
 const Routes = () => {
@@ -37,7 +38,13 @@ const Routes = () => {
 						},
 						{
 							path: 'users',
-							element: <Users />
+							element: <Users />,
+							children: [
+								{
+									path:'add-user',
+									element: <AddUser />
+								}
+							]
 						},
 						{
 							path: "*",
