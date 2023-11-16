@@ -9,7 +9,8 @@ export const BREADCRUMBARRAY = {
   'travel-quiz': {path: 'travel-quiz', name:'Travel Quiz' },
   'generated-plans': {path: 'generated-plans', name:'No. of Plans Generated' },
   'details': {path: 'details', name:'Plan Details' },
-  'add-user': {path: 'add-user', name: 'Add User Details'}
+  'add-user': {path: 'add-user', name: 'Add User Details'},
+  'slider': { path: 'slider', name: 'Slider' },
 }
 
 export const USER_TOKEN = "refresh-token";

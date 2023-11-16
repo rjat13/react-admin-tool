@@ -9,6 +9,8 @@ import NotFound from "./pages/404";
 import { AuthContext } from "./store/provider/AuthProvider";
 import {useAuth} from './hooks/useAuth'
 import AddUser from "./pages/admin/users/AddUser";
+import Slider from "./pages/slider";
+import Tables from "./pages/tables";
 
 
 const Routes = () => {
@@ -45,6 +47,14 @@ const Routes = () => {
 									element: <AddUser />
 								}
 							]
+						},
+						{
+							path: 'slider',
+							element: <Slider />
+						},
+						{
+							path: 'tables',
+							element: <Tables />
 						},
 						{
 							path: "*",
