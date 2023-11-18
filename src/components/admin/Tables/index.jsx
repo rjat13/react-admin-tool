@@ -1,8 +1,11 @@
+import SimpleTable from "./SimpleTable"
 
 
 const TableComponent = () => {
   return (
-    <div>TableComponent</div>
+    <div>
+      <SimpleTable />
+    </div>
   )
 }
 
