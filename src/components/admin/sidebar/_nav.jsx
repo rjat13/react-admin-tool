@@ -1,7 +1,7 @@
 
 import CIcon from "@coreui/icons-react";
-import { cilSpeedometer, cilUser, cilChatBubble, cilPuzzle, cilSatelite, cilGrid } from "@coreui/icons";
-import { CNavItem } from "@coreui/react";
+import { cilSpeedometer, cilUser, cilChatBubble, cilPuzzle, cilSatelite, cilGrid, cilBell } from "@coreui/icons";
+import { CNavGroup, CNavItem } from "@coreui/react";
 
 const _nav = [
   {
@@ -27,6 +27,28 @@ const _nav = [
     name: "Tables",
     to: "tables",
     icon: <CIcon icon={cilGrid} customClassName="nav-icon" />,
+  },
+  {
+    component: CNavGroup,
+    name: 'UI Components',
+    icon: <CIcon icon={cilBell} customClassName="nav-icon" />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'Buttons',
+        to: 'ui/buttons',
+      },
+      {
+        component: CNavItem,
+        name: 'Form Validation',
+        to: 'ui/form-validation',
+      },
+      {
+        component: CNavItem,
+        name: 'Modal',
+        to: 'ui/modals',
+      },
+    ],
   },
   {
     component: CNavItem,

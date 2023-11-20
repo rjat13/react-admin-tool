@@ -11,6 +11,9 @@ import {useAuth} from './hooks/useAuth'
 import AddUser from "./pages/admin/users/AddUser";
 import Slider from "./pages/slider";
 import Tables from "./pages/tables";
+import Buttons from "./pages/ui/buttons";
+import Modals from "./pages/ui/modals";
+import FormValidation from "./pages/ui/formValidation";
 
 
 const Routes = () => {
@@ -55,6 +58,23 @@ const Routes = () => {
 						{
 							path: 'tables',
 							element: <Tables />
+						},
+						{
+							path: 'ui',
+							children: [
+								{
+									path: 'buttons',
+									element: <Buttons />
+								},
+								{
+									path: 'form-validation',
+									element: <FormValidation />
+								},
+								{
+									path: 'modals',
+									element: <Modals />
+								}
+							]
 						},
 						{
 							path: "*",

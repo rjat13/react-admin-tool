@@ -9,9 +9,7 @@ import {
   CTable,
 } from "@coreui/react";
 
-// const CSmartTable = ({columns,items, ...rest}) => {
-//     return <CTable columns={columns} items={items} {...rest}/>
-// }
+
 const CSmartDataTable = ({
   data,
   columns,
@@ -22,21 +20,8 @@ const CSmartDataTable = ({
   const [currentPage, setCurrentPage] = useState(1);
 
   const handleFilterChange = (event) => {
-    console.log("event ", event);
     const { value } = event.target;
-    const filteredData = data.filter((item) => {
-      console.log("search value", item, columns);
-    //   const searchValue = item[columns[1].key].toLowerCase();
-    //   const searchValue2 = item[columns[2].key].toLowerCase();
-      const r =  columns.filter(itm => {
-        console.log("itm.key.toLowerCase()", itm.key.toLowerCase().includes(value.toLowerCase()))
-        return itm.isFilter && itm.key.toLowerCase().includes(value.toLowerCase())
-      });
-      console.log("res", r)
-      return r;
-    //   return searchValue.includes(value.toLowerCase()) || searchValue2.includes(value.toLowerCase());
-    });
-    console.log("filterdata", filteredData);
+    const filteredData = onFilteredItemsChange(value);
     setFilteredItems(filteredData);
   };
 

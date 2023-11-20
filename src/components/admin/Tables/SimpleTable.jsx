@@ -47,8 +47,9 @@ const SimpleTable = (props) => {
   ];
   const data = [
     { id: 1, name: 'John Doe', email: 'johndoe@example.com' },
-    { id: 2, name: 'Jane Doe', email: 'janedoe@example.com' },
-    { id: 3, name: 'Peter Jones', email: 'peterjones@example.com' },
+    { id: 2, name: 'Nitesh Pal', email: 'niteshpal@gmail.com' },
+    { id: 3, name: 'Jane Doe', email: 'janedoe@example.com' },
+    { id: 4, name: 'Peter Jones', email: 'peterjones@example.com' },
   ];
   
   const columns2 = [
@@ -57,7 +58,14 @@ const SimpleTable = (props) => {
     { key: 'email', label: 'Email', isFilter: true },
   ];
 
-  const handleFilteredItemsChange = () => console.log("onchange function call")
+  const handleFilterLogic = (value) => {
+    const filteredData = data.filter((item) => {
+      const searchValue = item['name'].toLowerCase();
+      const searchValue2 = item['email'].toLowerCase();
+      return searchValue.includes(value.toLowerCase()) || searchValue2.includes(value.toLowerCase());
+    });
+    return filteredData;
+  }
 
   return (
     <>
@@ -65,7 +73,7 @@ const SimpleTable = (props) => {
       <CTable columns={columns} items={items} {...props} color="dark"  striped hover/>
       <br />
       <h3>Filter Option</h3>
-      <CSmartDataTable data={data} columns={columns2} itemsPerPage={2} onFilteredItemsChange={handleFilteredItemsChange} />
+      <CSmartDataTable data={data} columns={columns2} itemsPerPage={2} onFilteredItemsChange={handleFilterLogic} />
     </>
   );
 };

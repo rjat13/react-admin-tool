@@ -11,6 +11,10 @@ export const BREADCRUMBARRAY = {
   'details': {path: 'details', name:'Plan Details' },
   'add-user': {path: 'add-user', name: 'Add User Details'},
   'slider': { path: 'slider', name: 'Slider' },
+  'ui': {path: '', name: 'UI Component'},
+  'buttons': {path: 'buttons', name: 'Buttons'},
+  'modals': {path: 'modals', name: 'Modals'},
+  'form-validation': {path: 'form-validation', name: 'Form Validation'}
 }
 
 export const USER_TOKEN = "refresh-token";
