@@ -1,14 +1,24 @@
-import { CFormFeedback, CFormInput } from '@coreui/react';
+import { CFormFeedback } from '@coreui/react';
 import { Field, ErrorMessage, useFormikContext } from 'formik';
 import PropTypes from "prop-types";
+
+const WrapLabel = ({name,label, children}) => {
+  return (<div className='mb-2 mt-2'>
+      <label htmlFor={name}>{label}</label>
+    {children}</div>);
+}
+WrapLabel.propTypes = {
+  name:PropTypes.string.isRequired,
+  label:PropTypes.node.isRequired,
+  children:PropTypes.element
+}
 
 const TextInput = ({ name, label, type, ...props }) => {
     const { values, errors, touched, isSubmitting, handleChange, handleBlur } = useFormikContext();
     console.log("values", values, " error ", errors, " touched", touched)
-    console.log("label", label);
-  return (
-    <div className='mb-2 mt-2'>
-      <label htmlFor={name}>{label}</label>
+    console.log("isSubmitting", isSubmitting);
+  if(label){
+    return (<WrapLabel>
       <Field
         className={`form-control form-control-sm ${touched[name] && errors[name] ? 'is-invalid' : null}`}
         id={name}
@@ -20,7 +30,21 @@ const TextInput = ({ name, label, type, ...props }) => {
         invalid={errors[name]}
       />
       {touched[name] && errors[name] && <CFormFeedback invalid={errors[name]}><ErrorMessage name={name} component="div" className="error" /></CFormFeedback>}
-    </div>
+    </WrapLabel>)
+  }
+  return (<>
+      <Field
+        className={`form-control form-control-sm ${touched[name] && errors[name] ? 'is-invalid' : null}`}
+        id={name}
+        name={name}
+        value={values[name]}
+        error={touched[name] && errors[name]}
+        type={type}
+        {...props}
+        invalid={errors[name] ? true : false}
+      />
+      {touched[name] && errors[name] && <CFormFeedback invalid={errors[name]}><ErrorMessage name={name} component="div" className="error" /></CFormFeedback>}
+    </>
   );
 };
 

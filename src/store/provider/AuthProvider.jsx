@@ -23,7 +23,6 @@ const AuthProvider = ({ children }) => {
   };
 
   const isLoggedInUser = () => {
-    console.log("user logged in ")
     if(!Object.keys(AuthUser).length > 0){
       return redirect('/admin');
     }

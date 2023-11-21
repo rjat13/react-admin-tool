@@ -31,11 +31,12 @@ const Routes = () => {
 			children: [
 				{
 					path: '',
-					element: <Signin />
+					element: <Signin />,
+					// loader: () => isLoggedInUser(),
 				},{
 					path: '*',
 					element: <AdminLayout />,
-					// loader: () => isLoggedInUser(),
+					loader: () => isLoggedInUser(),
 					children: [
 						{
 							path: 'dashboard',
