@@ -50,18 +50,6 @@ const _nav = [
       },
     ],
   },
-  {
-    component: CNavItem,
-    name: "Personality Quiz",
-    to: "/personality-quiz",
-    icon: <CIcon icon={cilChatBubble} customClassName="nav-icon" />,
-  },
-  {
-    component: CNavItem,
-    name: "Travel Quiz",
-    to: "/travel-quiz",
-    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
-  },
 ];
 
 export default _nav;

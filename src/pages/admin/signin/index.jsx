@@ -18,6 +18,8 @@ import * as Yup from "yup";
 import clientApi from "../../../network";
 import { useContext } from "react";
 import { AuthContext } from "../../../store/provider/AuthProvider";
+import { toast } from "react-toastify";
+import { LOGIN_FAILED, LOGIN_SUCCESS } from "../../../Constant";
 
 const validationSchema = Yup.object({
   email: Yup.string()
@@ -34,9 +36,13 @@ const Signin = () => {
     try{
       const params = {...values, role: 'admin'}
       const {data} = await clientApi.get('/users', {params});
+      console.log("response api", data)
       if(data?.length){
+        toast.success(LOGIN_SUCCESS)
         updateAuthUser(data[0]);
         navigate('dashboard')
+      }else{
+        toast.error(LOGIN_FAILED)
       }
     }catch(err){
       console.log("error", err)

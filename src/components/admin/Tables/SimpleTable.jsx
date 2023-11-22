@@ -1,5 +1,6 @@
 import { CTable } from "@coreui/react";
 import CSmartDataTable from "./ExampleTable";
+import DataTable from "react-data-table-component";
 
 const SimpleTable = (props) => {
   const columns = [
@@ -57,7 +58,11 @@ const SimpleTable = (props) => {
     { key: 'name', label: 'Name', isFilter: true },
     { key: 'email', label: 'Email', isFilter: true },
   ];
-
+  const columnsDataTable = [
+    { name: 'ID', selector: row => row.id, sortable: false, },
+    { name: 'Name', selector: row => row.name, sortable: true, },
+    { name: 'Email', selector: row => row.email, sortable: true, },
+  ];
   const handleFilterLogic = (value) => {
     const filteredData = data.filter((item) => {
       const searchValue = item['name'].toLowerCase();
@@ -74,6 +79,7 @@ const SimpleTable = (props) => {
       <br />
       <h3>Filter Option</h3>
       <CSmartDataTable data={data} columns={columns2} itemsPerPage={2} onFilteredItemsChange={handleFilterLogic} />
+      <DataTable title="Simple Data Table" columns={columnsDataTable} data={data} pagination />
     </>
   );
 };

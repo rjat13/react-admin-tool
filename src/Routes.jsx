@@ -18,7 +18,6 @@ import FormValidation from "./pages/ui/formValidation";
 
 const Routes = () => {
 	const { isLoggedInUser } = useAuth(AuthContext);
-	console.log("abc", isLoggedInUser)
 	const router = createBrowserRouter([
 		{
 			path: '/',

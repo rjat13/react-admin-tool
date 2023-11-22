@@ -1,4 +1,5 @@
 export const LOGIN_SUCCESS = 'Logged in successfully'
+export const LOGIN_FAILED = 'Invalid email or password.'
 export const PASSWORD_RESET_SUCCESS = 'Your new password has been updated.';
 export const OTP_GENERATED_SUCCESS = 'OTP has been sent to your email.';
 export const OTP_VERIFY_SUCCESS = 'OTP verification done.';
