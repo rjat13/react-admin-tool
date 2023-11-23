@@ -1,6 +1,6 @@
 import { CTable } from "@coreui/react";
 import CSmartDataTable from "./ExampleTable";
-import DataTable from "react-data-table-component";
+import DataTablesExample from "./DataTablesExample";
 
 const SimpleTable = (props) => {
   const columns = [
@@ -73,14 +73,14 @@ const SimpleTable = (props) => {
   }
 
   return (
-    <>
+    <div className="mb-4">
       <h3>Simple Table</h3>
       <CTable columns={columns} items={items} {...props} color="dark"  striped hover/>
       <br />
       <h3>Filter Option</h3>
       <CSmartDataTable data={data} columns={columns2} itemsPerPage={2} onFilteredItemsChange={handleFilterLogic} />
-      <DataTable title="Simple Data Table" columns={columnsDataTable} data={data} pagination />
-    </>
+      <DataTablesExample title="Simple Data Table" columns={columnsDataTable} data={data} pagination />
+    </div>
   );
 };
 
