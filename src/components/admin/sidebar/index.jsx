@@ -25,8 +25,15 @@ const Sidebar = () => {
       }}
     >
       <CSidebarBrand className="d-none d-md-flex" to="/">
-        <img className='sidebar-brand-full' src={BrandLogo} />
-        <img className='sidebar-brand-narrow' src={BrandLogoNarrow} />
+        <div className='sidebar-brand-full'>
+          E-commerce
+        </div>
+        <div className='sidebar-brand-narrow'>
+          EC
+        </div>
+        {/* <h3 style={{color:'white', fontWeight:"bold", marginLeft:"20px"}}>E-commerce</h3> */}
+        {/* <img className='sidebar-brand-full' src={BrandLogo} />
+        <img className='sidebar-brand-narrow' src={BrandLogoNarrow} /> */}
       </CSidebarBrand>
       <CSidebarNav>
         <SimpleBar>

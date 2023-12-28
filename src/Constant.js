@@ -11,6 +11,7 @@ export const BREADCRUMBARRAY = {
   'generated-plans': {path: 'generated-plans', name:'No. of Plans Generated' },
   'details': {path: 'details', name:'Plan Details' },
   'add-user': {path: 'add-user', name: 'Add User Details'},
+  'tables': {path: 'tables', name: 'Tables'},
   'slider': { path: 'slider', name: 'Slider' },
   'ui': {path: '', name: 'UI Component'},
   'buttons': {path: 'buttons', name: 'Buttons'},

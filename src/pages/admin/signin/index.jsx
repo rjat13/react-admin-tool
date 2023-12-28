@@ -36,7 +36,7 @@ const Signin = () => {
     try{
       const params = {...values, role: 'admin'}
       const {data} = await clientApi.get('/users', {params});
-      console.log("response api", data)
+      // console.log("response api", data)
       if(data?.length){
         toast.success(LOGIN_SUCCESS)
         updateAuthUser(data[0]);
