@@ -5,7 +5,7 @@ import * as Yup from 'yup';
 const formValidateSchema = Yup.object({
   email: Yup.string().email("Invalid email address").required("Email is required"),
   password: Yup.string().required("Password is required"),
-  gender: Yup.array().of(Yup.string()).required('select at least one option.'),
+  gender: Yup.string().required('select at least one option.'),
   hobbies: Yup.array().min(1, 'select at least one hobby.')
 })
 
@@ -24,9 +24,8 @@ const FormValidation = () => {
   
   return (<>
     <Formik initialValues={initialValues} validationSchema={formValidateSchema} onSubmit={handleSubmit}>
-      { ({isSubmitting, errors,  handleChange, handleBlur}) => (
+      { ({ handleChange, handleBlur }) => (
         <Form>
-          {console.log("errors", errors)}
           <div style={{marginBottom: 15}}>
             <label htmlFor="email">Email Address</label><br />
             <input id='email' name='email' type='text' placeholder='Enter your email' onChange={handleChange} onBlur={handleBlur}/><br />
@@ -63,7 +62,7 @@ const FormValidation = () => {
             <label className='ml-2' style={{marginLeft: 5}}>Female</label>
             <ErrorMessage name='gender'>{ msg => <CFormText className='help-block text-danger'>{msg}</CFormText>}</ErrorMessage>
           </div>
-          <button type='submit' disabled={isSubmitting} style={{marginTop: 15}}>Submit</button>
+          <button type='submit' style={{marginTop: 15}}>Submit</button>
         </Form>
       )}
     </Formik>
