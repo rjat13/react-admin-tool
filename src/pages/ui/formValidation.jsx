@@ -27,39 +27,39 @@ const FormValidation = () => {
       { ({ handleChange, handleBlur }) => (
         <Form>
           <div style={{marginBottom: 15}}>
-            <label htmlFor="email">Email Address</label><br />
+            <label htmlFor="email">Email</label><br />
             <input id='email' name='email' type='text' placeholder='Enter your email' onChange={handleChange} onBlur={handleBlur}/><br />
             <ErrorMessage name='email'>{ msg => <CFormText className='help-block text-danger'>{msg}</CFormText>}</ErrorMessage>
           </div>
           <div style={{marginBottom: 15}}>
-            <label htmlFor="password">Password</label><br />
+          <label htmlFor="password">Password</label><br />
             <input id='password' name='password' type='password' placeholder='Enter your password' onChange={handleChange} onBlur={handleBlur} /><br />
             <ErrorMessage name='password'>{ msg => <CFormText className='help-block text-danger'>{msg}</CFormText>}</ErrorMessage>
           </div>
           <div>
             <div>
-              <input type='checkbox' name='hobbies' onChange={handleChange} value={'Cricket'} />
-              <label className='ml-2' style={{marginLeft: 5}}>Cricket</label>
+              <input id='hobbies.cricket' type='checkbox' name='hobbies' onChange={handleChange} value={'Cricket'} />
+              <label className='ml-2' style={{marginLeft: 5}} aria-label='Cricket' htmlFor='hobbies.cricket'>Cricket</label>
             </div>
             <div>
-              <input type='checkbox' name='hobbies' onChange={handleChange} value={'Music'} />
-              <label className='ml-2' style={{marginLeft: 5}}>Music</label>
+              <input id='hobbies.music' aria-label='Music' type='checkbox' name='hobbies' onChange={handleChange} value={'Music'} />
+              <label className='ml-2' style={{marginLeft: 5}} htmlFor='hobbies.music'>Music</label>
             </div>
             <div>
-              <input type='checkbox' name='hobbies' onChange={handleChange} value={'Reading Books'} />
-              <label className='ml-2' style={{marginLeft: 5}}>Reading Books</label>
+              <input id='hobbies.reading' aria-label='Reading Books' type='checkbox' name='hobbies' onChange={handleChange} value={'Reading Books'} />
+              <label className='ml-2' style={{marginLeft: 5}} htmlFor='hobbies.reading'>Reading Books</label>
             </div>
             <div>
-              <input type='checkbox' name='hobbies' onChange={handleChange} value={'Explore'} />
-              <label className='ml-2' style={{marginLeft: 5}}>Explore</label>
+              <input id='hobbies.explore' aria-label='Explore' type='checkbox' name='hobbies' onChange={handleChange} value={'Explore'} />
+              <label className='ml-2' style={{marginLeft: 5}} htmlFor='hobbies.explore'>Explore</label>
             </div>
             <ErrorMessage name='hobbies'>{ msg => <CFormText className='help-block text-danger'>{msg}</CFormText>}</ErrorMessage>
           </div>
           <div style={{marginTop: 10}}>
-            <input type='radio' name='gender' onChange={handleChange} value={'Male'} />
-            <label className='ml-2' style={{marginLeft: 5}}>Male</label>&nbsp;
-            <input type='radio' name='gender' onChange={handleChange} value={'Female'} />
-            <label className='ml-2' style={{marginLeft: 5}}>Female</label>
+            <input id='gender.male' type='radio' name='gender' onChange={handleChange} value={'Male'} />
+            <label htmlFor='gender.male' className='ml-2' style={{marginLeft: 5}}>Male</label>&nbsp;
+            <input id='gender.female' type='radio' name='gender' onChange={handleChange} value={'Female'} />
+            <label htmlFor='gender.female' className='ml-2' style={{marginLeft: 5}}>Female</label>
             <ErrorMessage name='gender'>{ msg => <CFormText className='help-block text-danger'>{msg}</CFormText>}</ErrorMessage>
           </div>
           <button type='submit' style={{marginTop: 15}}>Submit</button>
